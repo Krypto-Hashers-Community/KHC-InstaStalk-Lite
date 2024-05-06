@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InstaStalk Lite</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 4px;
+      margin: 5px 0;
+      display: none;
+    }
+    .status.success {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      display: block;
+    }
+    .status.error {
+      background-color: #ffebee;
+      color: #c62828;
+      display: block;
+    }
+    .status.warning {
+      background-color: #fff3e0;
+      color: #ef6c00;
+      display: block;
+    }
+    button {
+      background-color: #0095f6;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    button.stop {
+      background-color: #ef5350;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .stats {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+    .stats div {
+      margin: 5px 0;
+    }
+    .feature-list {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .feature-list ul {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    .feature-list li {
+      margin: 3px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>InstaStalk Lite</h2>
+    <div>
+      <input type="text" id="targetUsername" placeholder="Enter Instagram username">
+    </div>
+    <div class="button-group">
+      <button id="startTracking">Start Tracking</button>
+      <button id="stopTracking" class="stop" style="display: none;">Stop</button>
+    </div>
+    <button id="downloadData">Download Data</button>
+    <div id="status" class="status"></div>
+    <div class="stats">
+      <div>Total Reels found: <span id="reelsCount">0</span></div>
+      <div>Auto-liked Reels: <span id="likedCount">0</span></div>
+      <div>Last updated: <span id="lastUpdated">Never</span></div>
+      <div>Status: <span id="trackingStatus">Not tracking</span></div>
+    </div>
+    <div class="feature-list">
+      <strong>Active Features:</strong>
+      <ul>
+        <li>Auto-scrolling with natural patterns</li>
+        <li>Auto-like matching Reels</li>
+        <li>Duplicate prevention</li>
+        <li>Background tracking</li>
+      </ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
